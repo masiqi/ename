@@ -1,0 +1,77 @@
+<?py keywords = ''?>                                                       
+<?py description = '' ?>
+<?py mobile_url = '/'?>                                                        
+<?py include('www/header.html', keywords=keywords, description=description, mobile_url=mobile_url) ?>
+  <div class="lcbb_front">
+    <div class="container">
+      <div class="row index_main">
+        <div class="span5 offset1">
+          <div class="form_wrap">
+            <p>请在下面输入您的中文名和性别，点击获得英文名后就能立刻获得与您最为匹配的英文名字。</p>
+            <form id="calculateForm" class="form-horizontal">
+              <div class="control-group">
+                <label class="control-label" for="name">中文名字</label>
+                <div class="controls">
+                  <div class="input">
+                    <input type="text" class="input-medium" id="name" name="name" placeholder="您的中文名字">
+                  </div>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="gender">性别</label>
+                <div class="controls">
+                  <div class="input">
+                    <input type="radio" name="gender" id="gender_1" value="男" checked>男
+                    <input type="radio" name="gender" id="gender_2" value="女">女
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-large btn-block btn-primary start-calc" type="button">立刻获得英文名！</button>
+            </form>
+            </div>
+          </div>
+          <div class="span4 offset1 index2">
+            <h1>优化您的财富</h1>
+            <h3>快速为您制定理财方案</h3>
+            <h4>简单：只需要输入资金和理财周期</h4>
+            <h4>高效：以此计算获得全部产品方案</h4>
+            <h4>准确：数据实时更新，确保计算结果有效</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="index_main">
+    <div class="container">
+        <div class="row lcbb_middle">
+          <div class="span4">
+            <h3>理财，是件容易的事</h3>
+            <h4>在理财宝宝网站您不需要拥有丰富的理财经验、理解专业的金融术语，只需要输入资金和理财周期，理财宝宝就能根据您的信息搜索出目前国内所有适合您的各类产品信息，并且为您提供具体而完整的理财方案，将原本复杂的过程变得简单易用。</h4>
+          </div>
+          <div class="span4">
+            <h3>风险，可以控制</h3>
+            <h4>理财宝宝独创的产品分值模型能够从风险、资金要求、流动性、产品规模、收益以及性价比6个维度评估每款产品的各个属性，并且将各个属性的数值直观的输出到产品雷达图中，让您可以一目了然了解产品的各种属性</h4>
+          </div>
+          <div class="span4">
+            <h3>理财宝宝，随时随地</h3>
+            <h4>不仅仅可以通过电脑使用理财宝宝的服务，现在您更可以将理财宝宝装入您的手机中从而享受我们全天候全方位的金融理财服务！</h4>
+            <p><a href="https://itunes.apple.com/us/app/li-cai-bao-bao/id595049492?ls=1&mt=8"><button class="btn" type="button">IPhone下载</button></a>大小：3.3M</p>
+            <p><a href="http://licaibaobao-licaibaobao.stor.sinaapp.com/licaibaobao_android_0.2.apk"><button class="btn" type="button">Android下载</button></a>大小：2.4M</p>
+          </div>
+        </div>
+    </div>
+  </div>
+  <?py include('www/footer.html') ?>
+  <script>
+    $(".start-calc").bind('click', function(){
+      var name = $("#name").val();
+      //var gender = $("#gender").val();
+      var gender = $("input[name='gender']:checked").val();
+      if (name == "" || gender == "" ) {
+        alert("请输入中文姓名和性别");
+        return false;
+      }
+      window.location.href="/plan/"+name+"_"+gender+".html";
+    })
+  </script>
+  </body>
+</html>

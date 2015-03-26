@@ -1,0 +1,24 @@
+<?py name = _context.get('name', '')?>
+<?py gender = _context.get('gender', '')?>
+      <div class="nav nav-list well">
+        <h4>理财收益计算:</h4>
+        <form class="form-inline" style="margin-bottom: 0px;">
+          <div class="control-group">
+            <label>姓名：</label><input style="margin-left:10px;" class="input-small" id="name" name="name" size="16" type="text" value="#{ name }">
+          </div>
+          <div class="control-group">
+            <label>性别：</label>
+            <?py if gender == u'\u7537':?>                                                       
+            <input type="radio" name="gender" id="gender_1" value="男" checked><label style="margin-left:5px;">男</label>
+            <input type="radio" name="gender" id="gender_2" value="女"><label style="margin-left:5px;">女</label>
+            <?py else: ?>
+            <input type="radio" name="gender" id="gender_1" value="男"><label style="margin-left:5px;">男</label>
+            <input type="radio" name="gender" id="gender_2" value="女" checked><label style="margin-left:5px;">女</label>
+            <?py #endif?>
+
+          </div>
+          <div>
+            <button class="btn btn-large btn-block btn-primary start-calc" type="button">立刻获得英文名！</button>
+          </div>
+        </form>
+      </div>

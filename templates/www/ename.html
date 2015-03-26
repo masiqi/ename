@@ -1,0 +1,55 @@
+<?py title= name.name + '|理财宝宝，优化您的财富'.decode('utf-8') ?>
+<?py keywords = '%s,%s风险提示与收益计算'.decode('utf-8') % (name.name, name.name) ?>
+<?py description = '' ?>
+<?py canonical=None ?>
+<?py mobile_url='/name/%s' % name.name ?>
+<?py include('www/header.html', title=title, keywords=keywords, description=description, canonical=canonical, mobile_url=mobile_url)?>
+
+<div class="container">
+  <div class="row">
+    <div class="span9 lcbb_middle ptop20">
+      <h3>#{ name.name }</h3>
+      <div class="row">
+        <div class="span9">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>中文名</td>
+                <td>#{ name.cname }</td>
+              </tr>
+              <tr>
+                <td>性别</td>
+                <td>#{ name.gender }</td>
+              </tr>
+              <tr>
+                <td>音标</td>
+                <td>#{ name.pronounce }</td>
+              </tr>
+              <tr>
+                <td>发音</td>
+                <td>#{ name.name }.mp3</td>
+              </tr>
+              <tr>
+                <td>流行度排名</td>
+                <td>#{ name.rank }</td>
+              </tr>
+              <tr>
+                <td>含义</td>
+                <td>#{ name.description }</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="span5">
+          <div id="radar_chart"></div>
+        </div>
+      </div>
+    </div>
+    <div class="span3 ptop40">
+    </div>
+  </div>
+</div>
+
+<?py include('www/footer.html') ?>
+</body>
+</html>

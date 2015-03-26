@@ -1,0 +1,39 @@
+<?py title= '' ?>
+<?py keywords = '' ?>
+<?py description = ''?>
+<?py canonical=None ?>
+<?py mobile_url='/plan/%s_%s.html' % (name, gender) ?>
+<?py include('www/header.html', title=title, keywords=keywords, description=description, canonical=canonical, mobile_url=mobile_url)?>
+<div class="container">
+  <div class="row">
+    <div class="span9 ptop20">
+      <h2>计算结果</h2>
+        <div class="row">
+        </div>
+      <hr />
+      <div class="row">
+        <div class="span6">
+          <h2>详细方案</h2>
+        </div>
+      </div>
+    </div>
+    <div class="span3 ptop40">
+      <?py include('www/_sidebar.html', name=name, gender=gender)?>
+    </div>
+  </div>
+</div>
+<?py include('www/footer.html')?>
+<script>
+    $(".start-calc").bind('click', function(){
+      var name = $("#name").val();
+      //var gender = $("#gender").val();
+      var gender = $("input[name='gender']:checked").val();
+      if (name == "" || gender == "" ) {
+        alert("请输入中文姓名和性别");
+        return false;
+      }
+      window.location.href="/plan/"+name+"_"+gender+".html";
+    })
+</script>
+</body>
+</html>
